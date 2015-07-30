@@ -24,9 +24,11 @@ app.get('/search', function(req, res){
 
 	var search = req.query.data.toLowerCase();
 
-	var filtered = countries.filter(function(obj){
+	var filtered = [];
+
+	countries.forEach(function(obj){
 		if(obj.name.toLowerCase() === search){
-			return obj
+			filtered.push(obj)
 		}
 	});
 

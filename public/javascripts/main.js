@@ -27,7 +27,13 @@ $(document).on('ready', function(){
 			method: 'GET',
 			url: '/search',
 			data: {data: theData},
-			success: function(){}
+			success: function(filtered){
+				
+				filtered.forEach(function(country){
+					$('.country-div').append('<li class="country">' + country.name + '</li>')
+				});
+
+			}
 
 		});
 		
