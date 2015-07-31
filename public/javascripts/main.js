@@ -30,13 +30,25 @@ $(document).on('ready', function(){
 			success: function(filtered){
 				
 				filtered.forEach(function(country){
-					$('.country-div').append('<li class="country">' + country.name + '</li>')
+					$('.country-div').append('<li class="country">' + country.name + ' - ' + country.region + '</li><input type="checkbox" class="hasTravelled">I travelled here</input>')
 				});
 
 			}
 
 		});
 		
+
+	});
+
+	$('.hasTravelled').click(function(){
+		if (this.checked){
+			$.ajax({
+				method: 'POST',
+				url: '/has-travelled',
+				success:
+			})
+		}
+
 
 	});
 
